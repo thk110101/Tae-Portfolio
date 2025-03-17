@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tae Hyun Kim</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo center">
+                <a href="index.html">
+                    <img src="assets/General Assets/logo test.svg" alt="Your Logo">
+                </a>
+            </div>
+            <div class="top-bar">
+                <div class="name">Tae Hyun Kim</div>
+                <div class="title">Graphic Designer</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="about.html">about</a></li>
+                    <li class="no-hover"><a>:</a></li>
+                    <li><a href="about.html">linkedin</a></li>
+                    <li class="no-hover"><a>:</a></li>
+                    <li><a href="contact.html">resume</a></li>
+                </ul>
+            </nav>
+
+            <!-- Project Type Menu -->
+            <nav class="project-type">
+                <ul>
+                    <li><a href="#" data-category="Branding">branding</a></li>
+                    <li class="no-hover"><a>:</a></li>
+                    <li><a href="#" data-category="Editorial">editorial</a></li>
+                    <li class="no-hover"><a>:</a></li>
+                    <li><a href="#" data-category="Interactive">interactive</a></li>
+                </ul>
+            </nav>
+
+            <!-- Project Menu -->
+            <nav class="projects-menu">
+                <ul>
+                    <li class="no-hover"><a>projects</a></li>
+                    <li><a href="1PWP.html" data-category="Branding, Editorial">Pavilion Without Walls</a></li>
+                    <li><a href="2Lbxd.html" data-category="Branding, Interactive">Letterboxd</a></li>
+                    <li><a href="3Marcel.html" data-category="Branding, Editorial, Interactive">Hotel Marcel</a></li>
+                    <li><a href="4Pink.html" data-category="Print, Editorial">Pink Awakening</a></li>
+                    <li><a href="5Performa.html" data-category="Branding, Interactive">Performa Biennial</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+    <main class="content">
+        <section class="projects">
+            <div class="project" data-category="Print, Editorial">
+                <a href="1PWP.html">
+                    <img src="assets/Pavilion Without Walls/Micro_posters.jpg" alt="PWP Main">
+                </a>
+                <div class="project-header">
+                    <div class="project-title">Pavilion Without Walls</div>
+                    <div class="project-meta">
+                        <span>Brand Identity, Editorial</span>
+                        <span> / </span>
+                        <span>2024</span>
+                    </div>
+                </div>
+                <p class="caption">Pavilion Without Walls, as part of the Performa Biennial, spotlights a selected country by showcasing its social, geographical, and political landscapes. The program brings both emerging and established artists from that country to New York as part of the Biennial’s programming. For this rebrand, the focus shifts to South Korea, highlighting prominent performance artists and exploring the country’s rich history of performance art as a tool for protest and experimentation.</p>
+            </div>
+
+            <!-- Posters Section -->
+            <div class="posters">
+                <img src="assets/Pavilion Without Walls/PWP_Poster2.jpeg" alt="PWP 2" class="poster">
+                <img src="assets/Pavilion Without Walls/PWP_Poster3.jpeg" alt="PWP 3" class="poster">
+                <img src="assets/Pavilion Without Walls/PWP_Poster.jpeg" alt="PWP 0" class="poster">
+                <img src="assets/Pavilion Without Walls/PWP_Poster1.jpeg" alt="PWP 1" class="poster">
+            </div>
+            <p class="caption">The custom logotype emphasizes the program’s mission of spotlighting a country and celebrates the collaboration between two locations. By reconstructing the Roman alphabet through the Korean alphabet (Hangul), the logotype reflects Pavilion Without Walls’ goal of expanding performing arts in an international context.</p>
+            
+            <div class="projects">
+                <img src="assets/Pavilion Without Walls/Micro_outdoor_2.jpg" alt="PWP Outdoor 1">
+            </div>
+            <p class="caption">As a parallel to the idea of Pavilion Without Walls, I referenced the Korean architectural style of a pavilion as a graphic element—expanding and reducing the weight to create a dynamic illustrative element that can be applied to various printed material.</p>
+        </section>
+    </main>
+</div>
+<!-- Video Section -->
+<div class="video-container">
+    <video loop autoplay muted>
+        <source src="assets/ThePinkAwakening/Generator.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+
+        </section>
+    </main>
+</div>
+
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

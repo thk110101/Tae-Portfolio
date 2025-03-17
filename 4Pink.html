@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tae Hyun Kim</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo center">
+                <a href="index.html">
+                    <img src="assets/General Assets/logo test.svg" alt="Your Logo">
+                </a>
+            </div>
+            <div class="top-bar">
+                <div class="name">Tae Hyun Kim</div>
+                <div class="title">Graphic Designer</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="about.html">about</a></li>
+                    <li class="no-hover"><a>:</a></li>
+                    <li><a href="about.html">linkedin</a></li>
+                    <li class="no-hover"><a>:</a></li>
+                    <li><a href="contact.html">resume</a></li>
+                </ul>
+            </nav>
+
+            <!-- Project Type Menu -->
+            <nav class="project-type">
+                <ul>
+                    <li><a href="#" data-category="Branding">branding</a></li>
+                    <li class="no-hover"><a>:</a></li>
+                    <li><a href="#" data-category="Editorial">editorial</a></li>
+                    <li class="no-hover"><a>:</a></li>
+                    <li><a href="#" data-category="Interactive">interactive</a></li>
+                </ul>
+            </nav>
+
+            <!-- Project Menu -->
+            <nav class="projects-menu">
+                <ul>
+                    <li class="no-hover"><a>projects</a></li>
+                    <li><a href="1PWP.html" data-category="Branding, Editorial">Pavilion Without Walls</a></li>
+                    <li><a href="2Lbxd.html" data-category="Branding, Interactive">Letterboxd</a></li>
+                    <li><a href="3Marcel.html" data-category="Branding, Editorial, Interactive">Hotel Marcel</a></li>
+                    <li><a href="4Pink.html" data-category="Print, Editorial">Pink Awakening</a></li>
+                    <li><a href="5Performa.html" data-category="Branding, Interactive">Performa Biennial</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+    <main class="content">
+        <section class="projects">
+            <div class="project" data-category="Print, Editorial">
+                <a href="4Pink.html">
+                    <img src="assets/ThePinkAwakening/Main.jpg" alt="Pink Awakening">
+                </a>
+                <div class="project-header">
+                    <div class="project-title">The Pink Awakening</div>
+                    <div class="project-meta">
+                        <span>2023</span>
+                        <span> / </span>
+                        <span>Editorial Design</span>
+                    </div>
+                </div>
+                <p class="caption">The Pink Awakening explores the resurgence of girlhood as a dominant cultural trend in 2023, continuing into 2024. Defined by traditionally feminine elements—bows, ribbons, and a predominance of pink—this trend can be understood through lenses of nostalgia and escapism. This publication examines how women connect through this movement across various media, marking it as a significant shift from past trends shaped by external influences, such as the male gaze.</p>
+            </div>
+            <div class="carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide">
+                        <img src="assets/ThePinkAwakening/Page SPreads-03.jpg" alt="Pink Awakening Image 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/ThePinkAwakening/Page SPreads-13.jpg" alt="Pink Awakening Image 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/ThePinkAwakening/Page SPreads-19.jpg" alt="Pink Awakening Image 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/ThePinkAwakening/Page SPreads-28.jpg" alt="Pink Awakening Image 4">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/ThePinkAwakening/Page SPreads-29.jpg" alt="Pink Awakening Image 5">
+                    </div>
+                </div>
+                <button class="carousel-button prev">Previous</button>
+                <button class="carousel-button next">Next</button>
+            </div>
+            <p class="caption">I explored ways to visually represent femininity through type, pushing boundaries by incorporating script fonts and tight-leading sans serifs. The delicate flow reflects the theme’s softness, while the structured sans serif elements create balance, resulting in a dynamic yet cohesive visual language.</p>
+
+            <!-- Posters Section -->
+            <div class="posters">
+                <img src="assets/ThePinkAwakening/Tae_Wk14_Poster.jpg" alt="Poster 1" class="poster">
+                <img src="assets/ThePinkAwakening/Tae_Wk14_Poster2.jpg" alt="Poster 2" class="poster">
+                <img src="assets/ThePinkAwakening/Tae_Wk14_Poster3.jpg" alt="Poster 3" class="poster">
+            </div>
+            <p class="caption">Inspired by the texture of lace during my research, I experimented with replicating its intricacy through type. By layering tightly-leaded sans serifs, I created a woven effect that mimics lace’s delicate structure. Using p5.js and the logic developed through my experimentation, I generated a custom texture and applied it to my poster series, merging technology with typography.</p>
+        
+<!-- Video Section -->
+<div class="video-container">
+    <video loop autoplay muted>
+        <source src="assets/ThePinkAwakening/Generator.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+
+        </section>
+    </main>
+</div>
+
+<!-- Modal Structure -->
+<div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+    <div id="caption"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
