@@ -80,10 +80,11 @@ body {
 }
 
 .logo img {
-    width: 300px;
+    width: 350px !important;
     height: auto;
-    margin-bottom: 20px;
-    margin-left: -20px; /* Adjusts the logo 20px to the left */
+    padding-left: 35px
+    /* margin-bottom: 20px;
+    margin-left: 30px; Adjusts the logo 20px to the left */
 }
 
 /* Main Navigation Menu */
