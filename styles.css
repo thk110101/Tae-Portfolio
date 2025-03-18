@@ -237,7 +237,10 @@ nav ul li.no-hover a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    /* change margin-top back to 10px if title at bottom */
+    margin-top: 0px;
+    /* delete padding if title is going to be below project image */
+    padding-bottom: 10px;
 }
 
 .project-title {
@@ -246,17 +249,20 @@ nav ul li.no-hover a:hover {
     text-decoration: none;
     font-style: normal;
     text-align: left;
-    font-size: 16px;
+    font-size: 18px;
     font-family: 'Unica 77', sans-serif;
 }
 
 .project-meta {
+    width: 50%; /* Match the caption width */
+    margin-left: auto; /* Align with the caption */
     display: flex;
-    gap: 10px;
-    font-size: 12px;
+    gap: 5px;
+    font-size: 14px;
     color: rgb(36, 36, 36);
     font-family: 'Unica 77', sans-serif;
 }
+
 
 /* Posters Section */
 .posters {
@@ -286,7 +292,7 @@ nav ul li.no-hover a:hover {
     color: rgb(36, 36, 36);
     font-weight: normal;
     text-decoration: none;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Unica 77', sans-serif;
     width: 50%; /* Set the width to half of the content div */
     margin-left: auto; /* Align it to the right */
@@ -421,7 +427,7 @@ nav ul li.no-hover a:hover {
     text-decoration: none; /* Remove underline */
     font-style: normal;
     text-align: left;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 10px;
     font-family: 'Unica 77', sans-serif;
 }
@@ -446,6 +452,27 @@ nav ul li.no-hover a:hover {
     padding-bottom: 20px;
     flex-grow: 1;
 }
+
+/* Tooltip hidden by default */
+.project-tooltip {
+    position: absolute;
+    display: none;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 12px;
+    border-radius: 5px;
+    pointer-events: none; /* Prevent interference with cursor */
+    top: 50%; /* Adjust to position the tooltip above the image */
+    left: 50%; /* Center it horizontally */
+    transform: translate(-50%, -100%); /* Adjust the tooltip to appear above the image */
+}
+
+/* Display tooltip when hovering over the project */
+.project:hover .project-tooltip {
+    display: block;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

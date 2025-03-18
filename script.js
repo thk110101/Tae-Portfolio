@@ -107,3 +107,25 @@ modal.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+document.querySelectorAll('.project img').forEach(image => {
+    image.addEventListener('mouseenter', function(event) {
+        const tooltip = this.nextElementSibling; // The tooltip next to the image
+        tooltip.style.display = 'block'; // Show the tooltip
+    });
+
+    image.addEventListener('mousemove', function(event) {
+        const tooltip = this.nextElementSibling; // The tooltip next to the image
+        const offsetX = 10; // Adjust horizontal offset
+        const offsetY = 10; // Adjust vertical offset
+        tooltip.style.left = event.pageX + offsetX + 'px';
+        tooltip.style.top = event.pageY + offsetY + 'px';
+    });
+
+    image.addEventListener('mouseleave', function() {
+        const tooltip = this.nextElementSibling; // The tooltip next to the image
+        tooltip.style.display = 'none'; // Hide the tooltip when leaving the image
+    });
+});
+
+
