@@ -15,6 +15,7 @@
 
 body {
     font-family: 'Unica 77', sans-serif;
+    font-size: 14px;
     display: flex;
     height: 100vh;
     margin: 0; /* Ensure no margin */
@@ -167,6 +168,12 @@ nav ul li.no-hover a:hover {
 }
 
 /* Projects Menu */
+.projects-title {
+    font-size: 14px;
+    color: rgb(36, 36, 36);
+    font-family: 'Unica 77', sans-serif;
+    margin-left:30px;
+}
 
 .projects-menu {
     width: 100%;
@@ -288,7 +295,7 @@ nav ul li.no-hover a:hover {
     text-decoration: none;
     font-style: normal;
     text-align: left;
-    font-size: 24px;
+    font-size: 14px;
     font-family: 'Unica 77', sans-serif;
 }
 
@@ -686,12 +693,21 @@ nav ul li.no-hover a:hover {
 
     /* projects menu n hamburga */
 
+    .projects-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: #fdfdfd; /* Adjust this as needed */
+    }
+    
+    .projects-title {
+        font-size: 14px;
+        color: rgb(36, 36, 36);
+        font-family: 'Unica 77', sans-serif;
+    }
+
     .projects-menu {
-        position: absolute;
-        top: 50px;
-        left: 0;
-        width: 100%;
-        background: white;
         display: none; /* Hide initially */
         flex-direction: column;
         padding: 10px;
@@ -701,7 +717,7 @@ nav ul li.no-hover a:hover {
         list-style: none;
         padding: 0;
         margin: 0;
-        text-align: center;
+        text-align: left;
     }
 
     .projects-menu ul li {
@@ -710,8 +726,25 @@ nav ul li.no-hover a:hover {
     }
 
     .hamburger {
-        display: flex; /* Show on mobile */
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001;
+        position: relative;
     }
+
+    .hamburger span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: black;
+        transition: 0.3s ease-in-out;
+    }
+    
 
     .hamburger.active span:nth-child(1) {
         transform: translateY(6px) rotate(45deg);
