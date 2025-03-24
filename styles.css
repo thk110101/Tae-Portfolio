@@ -60,14 +60,14 @@ body {
 
 /* Name */
 .name {
-    font-size: 12px;
+    font-size: 14px;
     color: #242424;
     font-family: 'Unica 77', sans-serif;
 }
 
 /* Title */
 .title {
-    font-size: 12px;
+    font-size: 14px;
     color: rgb(36, 36, 36);
     font-family: 'Unica 77', sans-serif;
 }
@@ -105,7 +105,7 @@ nav ul li {
 nav ul li a {
     color: rgb(36, 36, 36);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 14px;
     transition: 0.3s;
     font-family: 'Unica 77', sans-serif;
 }
@@ -152,7 +152,7 @@ nav ul li.no-hover a:hover {
 .project-type ul li a {
     color: rgb(25, 25, 25);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 14px;
     transition: color 0.3s ease;
 }
 
@@ -191,7 +191,7 @@ nav ul li.no-hover a:hover {
 .projects-menu ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 14px;
     transition: color 0.3s ease;
 }
 
@@ -265,7 +265,7 @@ nav ul li.no-hover a:hover {
     text-decoration: none;
     font-style: normal;
     text-align: left;
-    font-size: 18px;
+    font-size: 24px;
     font-family: 'Unica 77', sans-serif;
 }
 
@@ -455,16 +455,14 @@ nav ul li.no-hover a:hover {
 }
 
 .profile img {
-    width: 400px;
-    min-width: 300px;
-    height: auto;
-    margin-right: 40px;
-    margin-top: 0px;
-    padding-bottom: 60px;
+    width: auto;
+    max-height: 200px;
+    padding: 0px;
+    margin-right: 30px;
 }
 
-.profile-text {
-    padding: 0px 200px 0 0;
+.profile-text p {
+    padding: 0px 50px 0 0;
     width: 100%;
     line-height: 1.2;
     padding-bottom: 20px;
@@ -478,7 +476,7 @@ nav ul li.no-hover a:hover {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fdfdfd;
-    font-size: 12px;
+    font-size: 14px;
     border-radius: 5px;
     pointer-events: none; /* Prevent interference with cursor */
     top: 50%; /* Adjust to position the tooltip above the image */
