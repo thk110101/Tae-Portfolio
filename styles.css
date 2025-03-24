@@ -620,6 +620,13 @@ nav ul li.no-hover a:hover {
         margin-bottom: 20px;
     }
 
+    .spreads{
+        display: grid;
+        gap: 0px;
+        grid-template-columns: auto auto  ;
+        grid-template-rows: auto auto  ;
+    }
+
     /* Preloader Styling */
 #preloader {
     position: fixed;
