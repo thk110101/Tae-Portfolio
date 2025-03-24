@@ -701,6 +701,7 @@ nav ul li.no-hover a:hover {
     }
     
     .projects-title {
+        margin: 0px;
         font-size: 14px;
         color: rgb(36, 36, 36);
         font-family: 'Unica 77', sans-serif;
