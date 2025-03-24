@@ -31,14 +31,14 @@ body {
 .sidebar {
     width: 350px;
     height: 100vh;
-    background: #fafafa;
+    background: #fdfdfd;
     position: fixed;
     left: 0;
     top: 0;
     display: flex;
     flex-direction: column;
     align-items: left;
-    overflow-y: scroll; /* Enable scrolling */
+    overflow-y: auto; /* Enable scrolling */
     -ms-overflow-style: none;  /* For Internet Explorer */
     scrollbar-width: none;  /* For Firefox */
 }
@@ -54,7 +54,7 @@ body {
     align-items: center;
     width: 100%;
     padding: 0px 45px 10px 30px; /* Adjust padding to fit better */
-    background: #fafafa;
+    background: #fdfdfd;
     margin: 0; /* Ensure no margin */
 }
 
@@ -121,7 +121,7 @@ nav ul li.no-hover a:hover {
 
 /* Main Content */
 .content {
-    background: #fafafa;
+    background: #fdfdfd;
     margin-left: 350px;
     width: 100%;
     padding: 40px;
@@ -223,15 +223,15 @@ nav ul li.no-hover a:hover {
 
 .spreads img{
     /* padding: 0px; */
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     max-width: 100%;
     border-radius: 0px;
 }
 
 /* Individual Project */
 .project {
-    background: #fafafa;
+    background: #fdfdfd;
     padding: 0px;
     border: none;
     border-radius: 0;
@@ -409,7 +409,7 @@ nav ul li.no-hover a:hover {
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: #fdfdfd;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -463,9 +463,10 @@ nav ul li.no-hover a:hover {
     padding-bottom: 60px;
 }
 
-.profile .profile-text {
+.profile-text {
     padding: 0px 200px 0 0;
-    width: 60%;
+    width: 100%;
+    line-height: 1.2;
     padding-bottom: 20px;
     flex-grow: 1;
 }
@@ -476,7 +477,7 @@ nav ul li.no-hover a:hover {
     display: none;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    color: #fdfdfd;
     font-size: 12px;
     border-radius: 5px;
     pointer-events: none; /* Prevent interference with cursor */
@@ -507,11 +508,6 @@ nav ul li.no-hover a:hover {
         margin-bottom: 20px; /* Add some spacing below the image */
     }
 
-    .profile .profile-text {
-        width: 90%; /* Make text take most of the screen width */
-        padding: 0; /* Remove excessive padding */
-    }
-
     body {
         display: block; /* Change from flex to block for natural flow */
         height: auto; /* Remove fixed height */
@@ -530,6 +526,26 @@ nav ul li.no-hover a:hover {
         overflow-y: visible; /* No separate scrolling */
         padding-bottom: 20px;
     }
+
+    /* delete if doesn't work */
+    .sidebar ul{
+        list-style: none;
+    padding: 20px;
+    }
+
+    .sidebar ul li {
+        padding: 0px;
+        /* border-bottom: 1px solid #555; */
+    }
+
+    .sidebar ul li a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        display: block;
+        padding: 0 0 5px;
+    }
+    /*  */
+    
     
     /* Keep your other mobile styling from before */
     .logo.center {
@@ -566,18 +582,6 @@ nav ul li.no-hover a:hover {
         margin-left: 30px; /* Default left margin */
         position: relative;
     }
-
-    nav ul li:nth-child(2) { margin-left: 45px; } /* Stagger 1st separator */
-    nav ul li:nth-child(3) { margin-left: 60px; } /* Stagger LinkedIn */
-    nav ul li:nth-child(4) { margin-left: 75px; } /* Stagger 2nd separator */
-    nav ul li:nth-child(5) { margin-left: 90px; } /* Stagger Resume */
-
-    .project-type ul li:nth-child(2) { margin-left: 45px; } /* Stagger 1st separator */
-    .project-type ul li:nth-child(3) { margin-left: 60px; } /* Stagger Editorial */
-    .project-type ul li:nth-child(4) { margin-left: 75px; } /* Stagger 2nd separator */
-    .project-type ul li:nth-child(5) { margin-left: 90px; } /* Stagger Interactive */
-
-    
     .project-type ul {
         flex-direction: row;
         flex-wrap: wrap;
@@ -586,8 +590,9 @@ nav ul li.no-hover a:hover {
     }
     
     .content {
-        margin-left: 0;
+        margin-left: 0px;
         width: 100%;
+        flex-grow: 1;
         padding: 20px;
         position: relative;
         border-left: none;
@@ -614,4 +619,17 @@ nav ul li.no-hover a:hover {
         width: 100%;
         margin-bottom: 20px;
     }
+
+    /* Preloader Styling */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgb(211, 79, 79);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
 }
