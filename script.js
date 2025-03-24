@@ -128,4 +128,14 @@ document.querySelectorAll('.project img').forEach(image => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const menu = document.querySelector(".projects-menu");
+
+    hamburger.addEventListener("click", function () {
+        menu.classList.toggle("open");
+    });
+});
+
+
 
