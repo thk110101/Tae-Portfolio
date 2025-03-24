@@ -213,6 +213,22 @@ nav ul li.no-hover a:hover {
     padding: 0px 0;
 }
 
+/* Editorial Spreads */
+.spreads {
+    display: grid;
+    gap: 0px;
+    grid-template-columns: auto auto  ;
+    grid-template-rows: auto auto  ;
+}
+
+.spreads img{
+    /* padding: 0px; */
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 0px;
+}
+
 /* Individual Project */
 .project {
     background: #fafafa;
@@ -301,7 +317,7 @@ nav ul li.no-hover a:hover {
 /* Video Section */
 .video-container {
     width: 100%;
-    background-color: rgb(24, 24, 24);
+    /* background-color: rgb(24, 24, 24); */
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -309,7 +325,7 @@ nav ul li.no-hover a:hover {
 
 .video-container video {
     width: 100%;
-    max-width: 600px;
+    /* max-width: 600px; */
     height: auto;
 }
 
