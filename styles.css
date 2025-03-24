@@ -15,7 +15,6 @@
 
 body {
     font-family: 'Unica 77', sans-serif;
-    font-size: 14px;
     display: flex;
     height: 100vh;
     margin: 0; /* Ensure no margin */
@@ -295,7 +294,7 @@ nav ul li.no-hover a:hover {
     text-decoration: none;
     font-style: normal;
     text-align: left;
-    font-size: 14px;
+    font-size: 18px;
     font-family: 'Unica 77', sans-serif;
 }
 
