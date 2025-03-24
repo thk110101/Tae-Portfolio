@@ -132,9 +132,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const hamburger = document.querySelector(".hamburger");
     const menu = document.querySelector(".projects-menu");
 
-    hamburger.addEventListener("click", function () {
-        menu.classList.toggle("open");
-    });
+    if (hamburger && menu) {
+        hamburger.addEventListener("click", function () {
+            menu.classList.toggle("open");
+
+            // Optional: Toggle the "X" animation for the hamburger icon
+            hamburger.classList.toggle("active");
+        });
+    } else {
+        console.error("Hamburger menu elements not found.");
+    }
 });
 
 
