@@ -626,16 +626,15 @@ nav ul li.no-hover a:hover {
         grid-template-rows: auto auto  ;
     }
 
-    /* Preloader Styling */
-#preloader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgb(211, 79, 79);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-}
+    .project-header {
+        flex-direction: column; /* Stack title and caption */
+        align-items: flex-start; /* Align text to the left */
+    }
+    
+    .caption {
+        width: 100%; /* Make caption take full width */
+        margin-left: 0; /* Reset margin */
+        margin-top: 5px; /* Add spacing between title and caption */
+    }
 
 }
