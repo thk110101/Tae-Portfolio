@@ -518,6 +518,17 @@ nav ul li.no-hover a:hover {
     display: block;
 }
 
+/* desktop version */
+@media (min-width: 769px) {
+    .projects-header {
+        display: none;
+    }
+    
+    .projects-title-desktop {
+        display: list-item;
+    }
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -699,12 +710,13 @@ nav ul li.no-hover a:hover {
         padding: 10px 20px;
         background: #fdfdfd; /* Adjust this as needed */
     }
-    
+
     .projects-title {
-        margin: 0px;
+        margin: 5px;
         font-size: 14px;
         color: rgb(36, 36, 36);
         font-family: 'Unica 77', sans-serif;
+        padding-bottom: 5px;
     }
 
     .projects-menu {
@@ -721,8 +733,14 @@ nav ul li.no-hover a:hover {
     }
 
     .projects-menu ul li {
-        padding: 10px;
-        border-bottom: 1px solid #ddd;
+        margin-left:10px;
+        margin-right:10px;
+        padding: 5px;
+        border-bottom: 1px solid #131313;
+    }
+
+    .projects-title-desktop{
+        display:none;
     }
 
     .hamburger {
