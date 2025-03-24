@@ -25,124 +25,142 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Carousel functionality
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    const carouselContainer = document.querySelector('.carousel-container');
-    const slides = document.querySelectorAll('.carousel-slide');
-    let currentIndex = 1;
-
-    // Clone first and last slides for infinite effect
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[slides.length - 1].cloneNode(true);
-    firstClone.id = 'first-clone';
-    lastClone.id = 'last-clone';
-
-    carouselContainer.appendChild(firstClone);
-    carouselContainer.prepend(lastClone);
-
-    const updateCarousel = () => {
-        carouselContainer.style.transition = 'transform 0.5s ease-in-out';
-        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    };
-
-    const jumpToSlide = () => {
-        carouselContainer.style.transition = 'none';
-        carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    };
-
-    prevButton.addEventListener('click', () => {
-        currentIndex--;
-        updateCarousel();
-    });
-
-    nextButton.addEventListener('click', () => {
-        currentIndex++;
-        updateCarousel();
-    });
-
-    carouselContainer.addEventListener('transitionend', () => {
-        if (carouselContainer.children[currentIndex].id === 'first-clone') {
-            currentIndex = 1;
-            jumpToSlide();
-        }
-        if (carouselContainer.children[currentIndex].id === 'last-clone') {
-            currentIndex = slides.length;
-            jumpToSlide();
-        }
-    });
-
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM fully loaded and parsed"); // Debug log
     
-
-    // Initial setup
-    carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-});
-
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-var posters = document.getElementsByClassName("poster");
-
-for (let i = 0; i < posters.length; i++) {
-    posters[i].onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-    }
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal image, close it
-modal.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-document.querySelectorAll('.project img').forEach(image => {
-    image.addEventListener('mouseenter', function(event) {
-        const tooltip = this.nextElementSibling; // The tooltip next to the image
-        tooltip.style.display = 'block'; // Show the tooltip
-    });
-
-    image.addEventListener('mousemove', function(event) {
-        const tooltip = this.nextElementSibling; // The tooltip next to the image
-        const offsetX = 10; // Adjust horizontal offset
-        const offsetY = 10; // Adjust vertical offset
-        tooltip.style.left = event.pageX + offsetX + 'px';
-        tooltip.style.top = event.pageY + offsetY + 'px';
-    });
-
-    image.addEventListener('mouseleave', function() {
-        const tooltip = this.nextElementSibling; // The tooltip next to the image
-        tooltip.style.display = 'none'; // Hide the tooltip when leaving the image
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".hamburger");
-    const menu = document.querySelector(".projects-menu");
-
-    if (hamburger && menu) {
-        hamburger.addEventListener("click", function () {
-            menu.classList.toggle("open");
-
-            // Optional: Toggle the "X" animation for the hamburger icon
-            hamburger.classList.toggle("active");
+        const hamburger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".projects-menu");
+    
+        console.log("Hamburger element:", hamburger); // Debug log
+        console.log("Projects menu element:", menu); // Debug log
+    
+        if (hamburger && menu) {
+            hamburger.addEventListener("click", function () {
+                console.log("Hamburger clicked"); // Debug log
+                menu.classList.toggle("open");
+    
+                // Optional: Toggle the "X" animation for the hamburger icon
+                hamburger.classList.toggle("active");
+            });
+        } else {
+            console.error("Hamburger menu elements not found.");
+        }
+    
+        // Carousel functionality
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+        const carouselContainer = document.querySelector('.carousel-container');
+        const slides = document.querySelectorAll('.carousel-slide');
+    
+        if (slides.length > 0) {
+            let currentIndex = 1;
+    
+            // Clone first and last slides for infinite effect
+            const firstClone = slides[0].cloneNode(true);
+            const lastClone = slides[slides.length - 1].cloneNode(true);
+            firstClone.id = 'first-clone';
+            lastClone.id = 'last-clone';
+    
+            carouselContainer.appendChild(firstClone);
+            carouselContainer.prepend(lastClone);
+    
+            const updateCarousel = () => {
+                carouselContainer.style.transition = 'transform 0.5s ease-in-out';
+                carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            };
+    
+            const jumpToSlide = () => {
+                carouselContainer.style.transition = 'none';
+                carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            };
+    
+            if (prevButton) {
+                prevButton.addEventListener('click', () => {
+                    currentIndex--;
+                    updateCarousel();
+                });
+            }
+    
+            if (nextButton) {
+                nextButton.addEventListener('click', () => {
+                    currentIndex++;
+                    updateCarousel();
+                });
+            }
+    
+            carouselContainer.addEventListener('transitionend', () => {
+                if (carouselContainer.children[currentIndex].id === 'first-clone') {
+                    currentIndex = 1;
+                    jumpToSlide();
+                }
+                if (carouselContainer.children[currentIndex].id === 'last-clone') {
+                    currentIndex = slides.length;
+                    jumpToSlide();
+                }
+            });
+    
+            // Initial setup
+            carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        } else {
+            console.error("Carousel slides not found.");
+        }
+    
+        // Get the modal
+        var modal = document.getElementById("myModal");
+    
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        var posters = document.getElementsByClassName("poster");
+    
+        for (let i = 0; i < posters.length; i++) {
+            posters[i].onclick = function(){
+                if (modal && modalImg) {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                }
+            }
+        }
+    
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+    
+        // When the user clicks on <span> (x), close the modal
+        if (span) {
+            span.onclick = function() {
+                if (modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    
+        // When the user clicks anywhere outside of the modal image, close it
+        if (modal) {
+            modal.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    
+        document.querySelectorAll('.project img').forEach(image => {
+            image.addEventListener('mouseenter', function(event) {
+                const tooltip = this.nextElementSibling; // The tooltip next to the image
+                tooltip.style.display = 'block'; // Show the tooltip
+            });
+    
+            image.addEventListener('mousemove', function(event) {
+                const tooltip = this.nextElementSibling; // The tooltip next to the image
+                const offsetX = 10; // Adjust horizontal offset
+                const offsetY = 10; // Adjust vertical offset
+                tooltip.style.left = event.pageX + offsetX + 'px';
+                tooltip.style.top = event.pageY + offsetY + 'px';
+            });
+    
+            image.addEventListener('mouseleave', function() {
+                const tooltip = this.nextElementSibling; // The tooltip next to the image
+                tooltip.style.display = 'none'; // Hide the tooltip when leaving the image
+            });
         });
-    } else {
-        console.error("Hamburger menu elements not found.");
-    }
+    });
 });
-
-
-
