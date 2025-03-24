@@ -27,23 +27,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log("DOM fully loaded and parsed"); // Debug log
 
-    const hamburger = document.querySelector(".hamburger");
-    const menu = document.querySelector(".projects-menu");
-
-    console.log("Hamburger element:", hamburger); // Debug log
-    console.log("Projects menu element:", menu); // Debug log
-
-    if (hamburger && menu) {
-        hamburger.addEventListener("click", function () {
-            console.log("Hamburger clicked"); // Debug log
-            menu.classList.toggle("open");
-
-            // Optional: Toggle the "X" animation for the hamburger icon
-            hamburger.classList.toggle("active");
-        });
-    } else {
-        console.error("Hamburger menu elements not found.");
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+        const projectsTitle = document.querySelector(".projects-title");
+        const menu = document.querySelector(".projects-menu");
+    
+        if (projectsTitle && menu) {
+            projectsTitle.addEventListener("click", function () {
+                menu.classList.toggle("open");
+            });
+        } else {
+            console.error("Projects menu elements not found.");
+        }
+    });
 
     // Carousel functionality
     const prevButton = document.querySelector('.carousel-button.prev');

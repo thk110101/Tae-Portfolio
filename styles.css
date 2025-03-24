@@ -744,6 +744,7 @@ nav ul li.no-hover a:hover {
         font-size: 14px;
         color: rgb(36, 36, 36);
         font-family: 'Unica 77', sans-serif;
+        cursor: pointer;
         padding-bottom: 5px;
     }
 
@@ -752,6 +753,9 @@ nav ul li.no-hover a:hover {
         flex-direction: column;
         padding: 10px;
         padding-bottom: 50px;
+    }
+    .projects-menu.open {
+        display: flex; /* Show when active */
     }
 
     .projects-menu ul {
@@ -803,10 +807,5 @@ nav ul li.no-hover a:hover {
     
     .hamburger.active span:nth-child(3) {
         transform: translateY(-6px) rotate(-45deg);
-    }
-    
-
-    .projects-menu.open {
-        display: flex; /* Show when active */
     }
 }
