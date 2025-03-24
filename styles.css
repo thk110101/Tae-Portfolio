@@ -294,7 +294,7 @@ nav ul li.no-hover a:hover {
 }
 
 .poster {
-    width: 33.33%; /* Adjusts the width to fit 3 posters side by side without gaps */
+    width: 25%; /* Adjusts the width to fit 3 posters side by side without gaps */
     cursor: pointer;
 }
 
