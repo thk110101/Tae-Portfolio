@@ -167,6 +167,7 @@ nav ul li.no-hover a:hover {
 }
 
 /* Projects Menu */
+
 .projects-menu {
     width: 100%;
 }
@@ -202,6 +203,28 @@ nav ul li.no-hover a:hover {
 .projects-menu ul li.no-hover a:hover {
     color: rgb(36, 36, 36); /* Keep the default color */
     text-decoration: none;
+}
+
+/* hamburg */
+
+.hamburger {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: black;
+    transition: 0.3s ease-in-out;
 }
 
 /* Projects Section */
@@ -506,6 +529,16 @@ nav ul li.no-hover a:hover {
         margin-bottom: 20px; /* Add some spacing below the image */
     }
 
+    .name {
+    align-items:center;
+    padding-left: 10px;
+    }
+
+    .title {
+        align-items:center;
+        padding-right: 10px;
+        }
+
     body {
         display: block; /* Change from flex to block for natural flow */
         height: auto; /* Remove fixed height */
@@ -523,12 +556,6 @@ nav ul li.no-hover a:hover {
         position: relative; /* Not fixed anymore */
         overflow-y: visible; /* No separate scrolling */
         padding-bottom: 20px;
-    }
-
-    /* delete if doesn't work */
-    .sidebar ul{
-        list-style: none;
-    padding: 20px;
     }
 
     .sidebar ul li {
@@ -568,18 +595,30 @@ nav ul li.no-hover a:hover {
     }
     
     
-    nav ul {
+    /* nav ul {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-start;
         margin-top: 15px;
         padding-left: 20px;
+    } */
+    .project-type,
+    .nav ul {
+        padding-left: 0;  
+        margin-left: 0;  
+        text-align: left;
     }
-    
-    nav ul li {
-        margin-left: 30px; /* Default left margin */
-        position: relative;
+
+
+    .nav ul {
+        list-style: none; /* Remove default list styling if needed */
     }
+
+    .nav ul li {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
     .project-type ul {
         flex-direction: row;
         flex-wrap: wrap;
@@ -629,6 +668,14 @@ nav ul li.no-hover a:hover {
     .project-header {
         flex-direction: column; /* Stack title and caption */
         align-items: flex-start; /* Align text to the left */
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .project-meta {
+        width: 100%; 
+        margin-left: 0; 
+        margin-top: 10px;
     }
     
     .caption {
@@ -637,4 +684,36 @@ nav ul li.no-hover a:hover {
         margin-top: 5px; /* Add spacing between title and caption */
     }
 
+    /* projects menu n hamburga */
+
+    .projects-menu {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: none; /* Hide initially */
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .projects-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .projects-menu ul li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .hamburger {
+        display: flex; /* Show on mobile */
+    }
+
+    .projects-menu.open {
+        display: flex; /* Show when active */
+    }
 }
