@@ -180,6 +180,11 @@ nav ul li.no-hover a:hover {
     transition: transform 0.3s ease-in-out;
 }
 
+.projects-menu.open .arrow {
+    transform: rotate(180deg);
+}
+
+
 .projects-menu {
     width: 100%;
 }
