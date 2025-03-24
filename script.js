@@ -27,18 +27,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     console.log("DOM fully loaded and parsed"); // Debug log
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const projectsTitle = document.querySelector(".projects-title");
-        const menu = document.querySelector(".projects-menu");
-    
-        if (projectsTitle && menu) {
-            projectsTitle.addEventListener("click", function () {
-                menu.classList.toggle("open");
-            });
-        } else {
-            console.error("Projects menu elements not found.");
-        }
-    });
+    const projectsTitle = document.querySelector(".projects-title");
+    const menu = document.querySelector(".projects-menu");
+    const arrow = document.querySelector(".arrow");
+
+    if (projectsTitle && menu && arrow) {
+        projectsTitle.addEventListener("click", function () {
+            menu.classList.toggle("open");
+            arrow.classList.toggle("rotate");
+        });
+    } else {
+        console.error("Projects menu elements not found.");
+    }
 
     // Carousel functionality
     const prevButton = document.querySelector('.carousel-button.prev');

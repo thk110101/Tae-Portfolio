@@ -175,6 +175,11 @@ nav ul li.no-hover a:hover {
     margin-left:30px;
 }
 
+.arrow {
+    margin-left: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
 .projects-menu {
     width: 100%;
 }
@@ -546,7 +551,6 @@ nav ul li.no-hover a:hover {
         display: list-item;
     }
 }
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
