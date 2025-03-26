@@ -45,7 +45,7 @@ body {
 }
 
 .sidebar::-webkit-scrollbar {
-    display: none; /* Hide scrollbar in Webkit browsers like Chrome, Safari */
+    display: none; 
 }
 
 /* Top Bar */
@@ -56,7 +56,7 @@ body {
     width: 100%;
     padding: 0px 45px 10px 30px; /* Adjust padding to fit better */
     background: #fdfdfd;
-    margin: 0; /* Ensure no margin */
+    margin: 0; 
 }
 
 /* Name */
@@ -219,7 +219,7 @@ nav ul li.no-hover a:hover {
 }
 
 .projects-menu ul li.no-hover a:hover {
-    color: rgb(36, 36, 36); /* Keep the default color */
+    color: rgb(36, 36, 36);
     text-decoration: none;
 }
 
@@ -277,8 +277,8 @@ nav ul li.no-hover a:hover {
     border: none;
     border-radius: 0;
     box-shadow: none;
-    width: 100%; /* Ensure it takes up the full width */
-    margin: 0 auto; /* Keep it centered horizontally if there's any margin to adjust */
+    width: 100%; 
+    margin: 0 auto;
     padding-bottom: 0px;
 }
 
@@ -476,13 +476,13 @@ nav ul li.no-hover a:hover {
     width: 260px;
     height: auto;
     margin-bottom: 20px;
-    margin-left: -20px; /* Adjusts the logo 20px to the left */
+    margin-left: -20px;
 }
 
 .project p {
     color: rgb(36, 36, 36);
-    font-weight: normal; /* Set font weight to normal */
-    text-decoration: none; /* Remove underline */
+    font-weight: normal; 
+    text-decoration: none;
     font-style: normal;
     text-align: left;
     font-size: 14px;
