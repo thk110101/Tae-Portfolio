@@ -156,4 +156,37 @@ if (projectsTitle && menu && arrow) {
             tooltip.style.display = 'none'; // Hide the tooltip when leaving the image
         });
     });
+
+    // Listen for all mouse overs of all links in the nav element
+
+    const navLinks = document.querySelectorAll('.cascading a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('mouseover', function() {
+            // Store the HTML 5 data attribute of index of the current element
+            const selectedIndex = this.getAttribute('data-index');
+            navLinks.forEach(link => {
+                // Skip the current element
+                const index = this.getAttribute('data-index');
+                if(index == 0) {
+                    document.querySelectorAll('.cascading a[data-index="1"], .cascading a[data-index="2"]').forEach(el => el.style.paddingLeft = '40px');
+                    document.querySelectorAll('.cascading a[data-index="3"], .cascading a[data-index="4"]').forEach(el => el.style.paddingLeft = '80px');
+                } else if (index == 2) {
+                    document.querySelectorAll('.cascading a[data-index="0"], .cascading a[data-index="1"]').forEach(el => el.style.paddingLeft = '40px');
+                    document.querySelectorAll('.cascading a[data-index="3"], .cascading a[data-index="4"]').forEach(el => el.style.paddingLeft = '40px');
+                } else if (index == 4) {
+                    document.querySelectorAll('.cascading a[data-index="0"], .cascading a[data-index="1"]').forEach(el => el.style.paddingLeft = '80px');
+                    document.querySelectorAll('.cascading a[data-index="2"], .cascading a[data-index="3"]').forEach(el => el.style.paddingLeft = '40px');
+                }
+            }
+            );
+        });
+        // Reset the padding of all the links when the mouse leaves the nav element
+        link.addEventListener('mouseleave', function() {
+            navLinks.forEach(link => {
+                link.style.paddingLeft = '0px';
+            });
+        });
+    });
+
 });
