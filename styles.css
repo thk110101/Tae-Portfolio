@@ -487,11 +487,12 @@ nav.cascading ul {
 }
 
 .logo img {
+    transform: none;
     width: 260px;
     height: auto;
     margin-bottom: 20px;
-    margin-left: -20px;
-    transition: transform .5s ease;
+    margin-left: -25px;
+    transition: opacity 0.3s ease-in-out;
 }
 
 /* .logo img:hover {
