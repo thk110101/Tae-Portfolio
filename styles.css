@@ -593,6 +593,14 @@ nav.cascading ul {
     gap: 30px; /* Add spacing between columns */
     align-items: end; /* Align items at the bottom */
     height: 500px; /* Set grid height to 500px */
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.profile-name {
+    font-size: 30px;
+    font-family: 'Unica 77', sans-serif;
+    margin-bottom: 10px;
 }
 
 .profile-text{
@@ -687,14 +695,25 @@ nav.cascading ul {
 @media (max-width: 768px) {
 
     .profile {
+        margin: 0;
+        padding: 0;
         display: flex;
         flex-direction: column; /* Stack items vertically */
         gap: 20px; /* Add spacing between items */
         align-items: flex-start; /* Align items to the left */
         height: auto; /* Remove fixed height */
+        text-align: left; /* Ensure all content aligns to the left */
+    }
+
+    .profile-name {
+        margin-left: 0px;
+        padding: 0;
+        text-align: left; /* Align text to the left */
     }
     
     .profile-text {
+        margin: 0;
+        padding: 0;
         font-size: 18px; /* Adjust font size for smaller screens */
         line-height: 1.5; /* Increase line height for readability */
         text-align: left; /* Align text to the left */
@@ -704,6 +723,7 @@ nav.cascading ul {
         height: auto; /* Allow height to adjust naturally */
         width: 100%; /* Make the image take full width */
         max-width: 300px; /* Optional: Limit the maximum width */
+        text-align: left; /* Ensure alignment to the left */
     }
     
     .profile-image img {
@@ -877,7 +897,6 @@ nav.cascading ul {
         padding: 20px;
         position: relative;
         border-left: none;
-        border-top: 1px solid rgb(50, 50, 50);
     }
 
     .header-caption {
