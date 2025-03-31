@@ -201,6 +201,7 @@ nav.cascading ul {
 }
 
 .projects-menu {
+    display: none !important;
     width: 100%;
 }
 
@@ -625,18 +626,25 @@ nav.cascading ul {
     }
     
     .container {
-        display: block; /* Change from flex to block */
-        height: auto; /* Remove fixed height */
+        display: block; 
+        width: 100%;
+        height: auto; 
     }
     
     .sidebar {
+        position: sticky;
+        top: 0; 
+        left: 0; 
         width: 100%;
         height: auto;
-        position: relative; /* Not fixed anymore */
-        overflow-y: visible; /* No separate scrolling */
-        padding-bottom: 20px;
-        flex-direction: column;
-        justify-content: flex-start;
+        overflow-y: auto;
+        padding: 0; 
+        margin: 0;
+        z-index: 1000; 
+    }
+
+    .sidebar > * {
+        margin: 0; /* Remove margins from all direct children of the sidebar */
     }
 
     .sidebar ul li {
@@ -659,25 +667,65 @@ nav.cascading ul {
         background: #f1f1f1; /* Optional: Add background color */
         padding: 10px;
         box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+    }
+
+    .top-bar-container {
+        display: flex; /* Arrange logo and top bar side by side */
+        justify-content: space-between; /* Space between logo and top bar */
+        align-items: center; /* Vertically align logo and top bar */
+        width: 100%; /* Ensure it fills the width */
+        padding: 0 10px; /* Add padding for spacing */
+        box-sizing: border-box;
     }
     
     /* Keep your other mobile styling from before */
     .logo.center {
-        justify-content: flex-start; /* Align the logo to the left */
-        margin-top: 40px; /* Optional: Adjust top margin if needed */
-        margin-left: 10px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 30%; 
+        padding: 0; /* Remove any padding */
+        margin: 0; /* Remove any margin */
+    }
+
+    .logo {
+        flex: 0 0 auto; /* Prevent the logo from stretching */
+        display: flex;
+        align-items: left; /* Center the logo vertically */
+        margin-left: 15px;
+        margin-top: 15px;
+        padding-left: 0px;
+        margin-right: 0px;
+        padding-right: 0px;
     }
 
     .logo img {
-        width: 100% !important; 
+        width: auto; /* Let the image size adjust naturally */
+        height: auto;
+        max-width: 100%; /* Ensure it doesn’t exceed the container width */
+        margin: 0; /* Remove any margin */
+        padding: 0; /* Remove any padding */
     }
     
     .top-bar {
-        width: 100%;
-        padding: 10px 20px;
+        flex: 1; /* Allow the top bar to take the remaining space */
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column; /* Stack name and title vertically */
+        justify-content: center; /* Center the content vertically */
+        align-items: flex-start; /* Align items to the left */
+        text-align: left; /* Ensure text is aligned to the left */
+        box-sizing: border-box;
+        padding-left: 0px; /* Add spacing between the logo and top bar */
+    }
+
+    .name {
+        margin-left: 0px;
+        margin-bottom: 5px; 
+    }
+
+    .title {
+        margin-top: 0;
     }
     
     
@@ -777,7 +825,6 @@ nav.cascading ul {
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
-        background: #fdfdfd; /* Adjust this as needed */
     }
 
     .projects-title {
@@ -818,18 +865,18 @@ nav.cascading ul {
     }
 
     .hamburger {
-        display: flex;
-        flex-direction: column;
+        display: none;
+        /* flex-direction: column;
         gap: 5px;
         background: none;
         border: none;
         cursor: pointer;
         padding: 10px;
         z-index: 1001;
-        position: relative;
+        position: relative; */
     }
 
-    .hamburger span {
+    /* .hamburger span {
         display: block;
         width: 30px;
         height: 3px;
@@ -848,5 +895,5 @@ nav.cascading ul {
     
     .hamburger.active span:nth-child(3) {
         transform: translateY(-6px) rotate(-45deg);
-    }
+    } */
 }
