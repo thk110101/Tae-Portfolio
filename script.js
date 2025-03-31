@@ -25,30 +25,119 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Logo GIF Reset
+    // active link
 
-    logo.addEventListener("mousemove", function (event) {
-        const logoRect = logo.getBoundingClientRect(); // Get the logo's position and size
-        const mouseX = event.clientX; // Get the mouse's X position relative to the viewport
-        const logoCenterX = logoRect.left + logoRect.width / 2; // Calculate the center of the logo
-
-        if (mouseX < logoCenterX) {
-            // Mouse is on the left side
-            if (logo.src !== "assets/General Assets/left.gif") {
-                logo.src = "assets/General Assets/left.gif";
+        const projectLinks = document.querySelectorAll(".projects-menu ul li a"); // Select all project links
+        const currentPage = window.location.pathname.split("/").pop(); // Get the current page filename
+    
+        projectLinks.forEach(link => {
+            const linkHref = link.getAttribute("href"); // Get the href of the link
+    
+            if (linkHref === currentPage) {
+                link.classList.add("active"); // Add the 'active' class to the matching link
             }
-        } else {
-            // Mouse is on the right side
-            if (logo.src !== "assets/General Assets/right.gif") {
-                logo.src = "assets/General Assets/right.gif";
-            }
-        }
-    });
+        });
 
-    // Reset to the static logo when the mouse leaves the logo
-    logo.addEventListener("mouseleave", function () {
-        logo.src = "assets/General Assets/logo test.svg";
-    });
+    // scroll
+
+    // const logoContainer = document.querySelector(".logo");
+    // const staticLogo = document.querySelector(".static-logo");
+    // let lastScrollTop = 0; // Track the last scroll position
+    // let gifTimeout; // Timeout to reset the logo after scrolling
+
+    // if (logoContainer && staticLogo) {
+    //     window.addEventListener("scroll", function () {
+    //         const currentScrollTop = window.scrollY; // Get the current scroll position
+    //         const gifLogo = document.createElement("img"); // Create a new <img> for the GIF
+    //         gifLogo.classList.add("gif-logo");
+
+    //         if (currentScrollTop > lastScrollTop) {
+    //             // Scrolling down
+    //             gifLogo.src = "assets/General Assets/left.gif";
+    //         } else if (currentScrollTop < lastScrollTop) {
+    //             // Scrolling up
+    //             gifLogo.src = "assets/General Assets/right.gif";
+    //         } else {
+    //             return; // No scroll direction change
+    //         }
+
+    //         // Clear any existing GIFs
+    //         const existingGif = document.querySelector(".gif-logo");
+    //         if (existingGif) {
+    //             existingGif.remove();
+    //         }
+
+    //         // Add the GIF to the logo container
+    //         logoContainer.appendChild(gifLogo);
+
+    //         // Show the GIF and hide the static logo
+    //         gifLogo.style.opacity = 1;
+    //         staticLogo.style.opacity = 0;
+
+    //         // Reset the logo after a short delay
+    //         clearTimeout(gifTimeout);
+    //         gifTimeout = setTimeout(() => {
+    //             gifLogo.style.opacity = 0; // Hide the GIF
+    //             staticLogo.style.opacity = 1; // Show the static logo
+    //             gifLogo.remove(); // Remove the GIF from the DOM
+    //         }, 1000); // Adjust the delay as needed (1 second here)
+
+    //         lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative values
+    //     });
+    // } else {
+    //     console.error("Logo container or static logo not found.");
+    // }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const logoContainer = document.querySelector(".logo");
+    const staticLogo = document.querySelector(".static-logo");
+    let lastScrollTop = 0; // Track the last scroll position
+    let gifTimeout; // Timeout to reset the logo after scrolling
+
+    if (logoContainer && staticLogo) {
+        window.addEventListener("scroll", function () {
+            const currentScrollTop = window.scrollY; // Get the current scroll position
+            const gifLogo = document.createElement("img"); // Create a new <img> for the GIF
+            gifLogo.classList.add("gif-logo");
+
+            if (currentScrollTop > lastScrollTop) {
+                // Scrolling down
+                gifLogo.src = "assets/General Assets/left.gif";
+            } else if (currentScrollTop < lastScrollTop) {
+                // Scrolling up
+                gifLogo.src = "assets/General Assets/right.gif";
+            } else {
+                return; // No scroll direction change
+            }
+
+            // Clear any existing GIFs
+            const existingGif = document.querySelector(".gif-logo");
+            if (existingGif) {
+                existingGif.remove();
+            }
+
+            // Add the GIF to the logo container
+            logoContainer.appendChild(gifLogo);
+
+            // Show the GIF and hide the static logo
+            gifLogo.style.opacity = 1;
+            staticLogo.style.opacity = 0;
+
+            // Reset the logo after a short delay
+            clearTimeout(gifTimeout);
+            gifTimeout = setTimeout(() => {
+                gifLogo.style.opacity = 0; // Hide the GIF
+                staticLogo.style.opacity = 1; // Show the static logo
+                gifLogo.remove(); // Remove the GIF from the DOM
+            }, 1000); // Adjust the delay as needed (1 second here)
+
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative values
+        });
+    } else {
+        console.error("Logo container or static logo not found.");
+    }
+});
 
     console.log("DOM fully loaded and parsed"); // Debug log
 
@@ -162,26 +251,6 @@ if (projectsTitle && menu && arrow) {
         }
     }
 
-    document.querySelectorAll('.project img').forEach(image => {
-        image.addEventListener('mouseenter', function(event) {
-            const tooltip = this.nextElementSibling; // The tooltip next to the image
-            tooltip.style.display = 'block'; // Show the tooltip
-        });
-
-        image.addEventListener('mousemove', function(event) {
-            const tooltip = this.nextElementSibling; // The tooltip next to the image
-            const offsetX = 10; // Adjust horizontal offset
-            const offsetY = 10; // Adjust vertical offset
-            tooltip.style.left = event.pageX + offsetX + 'px';
-            tooltip.style.top = event.pageY + offsetY + 'px';
-        });
-
-        image.addEventListener('mouseleave', function() {
-            const tooltip = this.nextElementSibling; // The tooltip next to the image
-            tooltip.style.display = 'none'; // Hide the tooltip when leaving the image
-        });
-    });
-
     // Listen for all mouse overs of all links in the nav element
 
     const navLinks = document.querySelectorAll('.cascading a');
@@ -213,23 +282,6 @@ if (projectsTitle && menu && arrow) {
             });
         });
     });
-
-    const logo = document.querySelector(".logo img");
-    let lastScrollTop = 0;
-
-    window.addEventListener("scroll", function () {
-        const currentScrollTop = window.scrollY;
-
-        if (currentScrollTop > lastScrollTop) {
-            // Scrolling down
-            logo.src = "assets/General Assets/right.gif";
-        } else {
-            // Scrolling up
-            logo.src = "assets/General Assets/left.gif";
-        }
-
-        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative values
-    });
-
+    
 });
 
