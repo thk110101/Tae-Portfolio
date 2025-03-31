@@ -214,5 +214,22 @@ if (projectsTitle && menu && arrow) {
         });
     });
 
+    const logo = document.querySelector(".logo img");
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", function () {
+        const currentScrollTop = window.scrollY;
+
+        if (currentScrollTop > lastScrollTop) {
+            // Scrolling down
+            logo.src = "assets/General Assets/right.gif";
+        } else {
+            // Scrolling up
+            logo.src = "assets/General Assets/left.gif";
+        }
+
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative values
+    });
+
 });
 
