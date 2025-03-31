@@ -721,7 +721,7 @@ nav.cascading ul {
     
     .profile-image {
         height: auto; /* Allow height to adjust naturally */
-        width: 100%; /* Make the image take full width */
+        width: 50%; /* Make the image take full width */
         max-width: 300px; /* Optional: Limit the maximum width */
         text-align: left; /* Ensure alignment to the left */
     }
@@ -734,7 +734,7 @@ nav.cascading ul {
     body {
         display: block; /* Change from flex to block for natural flow */
         height: auto; /* Remove fixed height */
-        overflow-y: auto; /* Enable scrolling on the body */
+        overflow: visible; 
     }
     
     .container {
@@ -781,7 +781,13 @@ nav.cascading ul {
         background: #f1f1f1; /* Optional: Add background color */
         padding: 10px;
         box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
-        z-index: 2;
+        z-index: 1000;
+        transform: translateZ(0);
+        display: block; /* Ensure the element is rendered */
+        visibility: visible; /* Ensure the element is visible */
+        -webkit-transform: translateZ(0); /* Safari-specific rendering fix */
+        -webkit-backface-visibility: hidden; /* Safari-specific rendering fix */
+
     }
 
     .top-bar-container {
@@ -955,6 +961,16 @@ nav.cascading ul {
         grid-template-rows: auto auto  ;
     }
 
+    .project-title {
+        color: rgb(36, 36, 36);
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        text-align: left;
+        font-size: 18px;
+        font-family: 'Unica 77', sans-serif;
+    }
+
     .project-header {
         flex-direction: column; /* Stack title and caption */
         align-items: flex-start; /* Align text to the left */
@@ -963,6 +979,13 @@ nav.cascading ul {
     }
 
     .project-meta {
+        color: rgb(36, 36, 36);
+        font-weight: normal;
+        text-decoration: none;
+        font-style: normal;
+        text-align: left;
+        font-size: 14px;
+        font-family: 'Unica 77', sans-serif;
         width: 100%; 
         margin-left: 0; 
         margin-top: 10px;
