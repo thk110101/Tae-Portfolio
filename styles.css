@@ -693,6 +693,7 @@ nav.cascading ul {
     z-index: 1;
     margin: 0; /* Remove any margin */
     margin-left: 300px;
+    padding-left: 20px;
 }
 
 .footer-info .footer-content p {
