@@ -25,6 +25,60 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Logo GIF Reset
+
+    logo.addEventListener("mousemove", function (event) {
+        const logoRect = logo.getBoundingClientRect(); // Get the logo's position and size
+        const mouseX = event.clientX; // Get the mouse's X position
+        const logoCenterX = logoRect.left + logoRect.width / 2; // Calculate the center of the logo
+
+        logo.addEventListener("mousemove", function (event) {
+        const logoRect = logo.getBoundingClientRect(); // Get the logo's position and size
+        const mouseX = event.clientX; // Get the mouse's X position
+        const logoCenterX = logoRect.left + logoRect.width / 2; // Calculate the center of the logo
+
+        logo.addEventListener("mousemove", function (event) {
+        const logoRect = logo.getBoundingClientRect(); // Get the logo's position and size
+        const mouseX = event.clientX; // Get the mouse's X position
+        const logoCenterX = logoRect.left + logoRect.width / 2; // Calculate the center of the logo
+
+        logo.addEventListener("mousemove", function (event) {
+            const logoRect = logo.getBoundingClientRect(); // Get the logo's position and size
+            const mouseX = event.clientX; // Get the mouse's X position
+            const logoCenterX = logoRect.left + logoRect.width / 2; // Calculate the center of the logo
+    
+            if (mouseX < logoCenterX) {
+                // Mouse is on the left side
+                logo.src = "assets/General Assets/left.gif";
+            } else {
+                // Mouse is on the right side
+                logo.src = "assets/General Assets/right.gif";
+            }
+        });
+    
+        // Reset to the static logo when the mouse leaves the logo
+        logo.addEventListener("mouseleave", function () {
+            logo.src = "assets/General Assets/logo test.svg";
+        });
+    });
+
+    // Reset to the static logo when the mouse leaves the logo
+    logo.addEventListener("mouseleave", function () {
+        logo.src = "assets/General Assets/logo test.svg";
+    });
+    });
+
+    // Reset to the static logo when the mouse leaves the logo
+    logo.addEventListener("mouseleave", function () {
+        logo.src = "assets/General Assets/logo test.svg";
+    });
+    });
+
+    // Reset to the static logo when the mouse leaves the logo
+    logo.addEventListener("mouseleave", function () {
+        logo.src = "assets/General Assets/logo test.svg";
+    });
+
     console.log("DOM fully loaded and parsed"); // Debug log
 
     const projectsTitle = document.querySelector(".projects-title");
@@ -190,3 +244,4 @@ if (projectsTitle && menu && arrow) {
     });
 
 });
+

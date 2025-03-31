@@ -29,9 +29,9 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 350px;
+    width: 300px;
     height: 100vh;
-    background: #fdfdfd;
+    background: #f5f5f5;
     position: fixed;
     left: 0;
     top: 0;
@@ -51,11 +51,11 @@ body {
 /* Top Bar */
 .top-bar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
     width: 100%;
-    padding: 0px 45px 10px 30px; /* Adjust padding to fit better */
-    background: #fdfdfd;
+    padding: 30px;
     margin: 0; 
 }
 
@@ -64,6 +64,8 @@ body {
     font-size: 14px;
     color: #242424;
     font-family: 'Unica 77', sans-serif;
+    margin-bottom: 10px;
+    
 }
 
 /* Title */
@@ -81,10 +83,12 @@ body {
 }
 
 .logo img {
-    width: 350px !important;
+    width: 95% !important;
     height: auto;
-    padding-left: 35px;
-    margin-top: -10px;
+    padding-left: 50px;
+    margin-top: 0px;
+    margin-left: 0px;
+    transition: transform 0.5s ease;
 }
 
 /* Main Navigation Menu */
@@ -118,6 +122,16 @@ nav ul li.no-hover a:hover {
     text-decoration: none;
 }
 
+nav.cascading {
+    margin: 0; /* Remove all margins */
+    padding: 0; /* Remove all padding */
+}
+
+nav.cascading ul {
+    margin-top: 20px; /* Remove margin from the unordered list */
+    padding: 0; /* Remove padding from the unordered list */
+}
+
 /* Main Content */
 .content {
     background: #fdfdfd;
@@ -125,9 +139,9 @@ nav ul li.no-hover a:hover {
     width: 100%;
     padding: 40px;
     overflow-y: auto;
-    border-left-color: rgb(50, 50, 50);
+    /* border-left-color: rgb(50, 50, 50);
     border-left-width: 1px;
-    border-left-style: solid;
+    border-left-style: solid; */
 }
 
 /* Projects Type Menu */
@@ -477,7 +491,15 @@ nav ul li.no-hover a:hover {
     height: auto;
     margin-bottom: 20px;
     margin-left: -20px;
+    transition: transform .5s ease;
 }
+
+/* .logo img:hover {
+    content: url('assets/General Assets/logo korean.svg');
+    transform: scale(1.01); 
+    content: url('assets/General Assets/right.gif'); 
+
+} */
 
 .project p {
     color: rgb(36, 36, 36);
@@ -530,20 +552,31 @@ nav ul li.no-hover a:hover {
     display: block;
 }
 
-/* Copyright */
+.menu-group {
+    margin-bottom: 30px; /* Ensure spacing above the copyright bar */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100vh; 
+    /* position: relative; */
 }
+
+/* Copyright */
 
 .copyright {
     text-align: center;
     padding: 10px;
     font-size: 12px;
-    color: #666;
-    background: #f1f1f1; /* Optional: Add background color */
+    color: #767676;
+    background: #d8d8d8;
+    width: 100%; /* Ensure it spans the full width of the sidebar */
+    flex-shrink: 0; /* Prevent it from shrinking */
 }
 
 

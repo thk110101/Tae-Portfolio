@@ -12,25 +12,26 @@
         <aside class="sidebar">
             <div class="logo center">
                 <a href="index.html">
-                    <img src="assets/General Assets/logo test.svg" alt="Your Logo">
+                     <img src="assets/General Assets/logo test.svg" alt="Logo" class="logo-img">
                 </a>
             </div>
             <div class="top-bar">
                 <div class="name">Tae Hyun Kim</div>
                 <div class="title">Graphic Designer</div>
             </div>
-            <nav>
+            <div class="menu-group">
+            <nav class="cascading">
                 <ul>
-                    <li><a href="info.html">info</a></li>
-                    <li class="no-hover"><a>:</a></li>
-                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/tae-hyun-kim-34a757192/">linkedin</a></li>
-                    <li class="no-hover"><a>:</a></li>
-                    <li><a href="assets/General Assets/Tae-Portfolio/assets/General Assets/TaeHyunKim_Resume_2025.pdf">resume</a></li>
+                    <li><a href="info.html" data-index="0">info</a></li>
+                    <li class="no-hover"><a data-index="1">:</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/tae-hyun-kim-34a757192/" data-index="2">linkedin</a></li>
+                    <li class="no-hover"><a data-index="3">:</a></li>
+                    <li><a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/13bpKyzMx7ikTZsYw6-CjbHqlu7fMXvsx/view?usp=sharing" data-index="4">resume</a></li>
                 </ul>
             </nav>
 
             <!-- Project Type Menu -->
-            <nav class="project-type">
+            <!-- <nav class="project-type">
                 <ul>
                     <li><a href="#" data-category="Branding">branding</a></li>
                     <li class="no-hover"><a>:</a></li>
@@ -38,19 +39,28 @@
                     <li class="no-hover"><a>:</a></li>
                     <li><a href="#" data-category="Interactive">interactive</a></li>
                 </ul>
-            </nav>
+            </nav> -->
 
             <!-- Project Menu -->
+             <!-- /* Hamburge for mobile */ -->
+             <nav class="projects-header">
+                <span class="projects-title">projects<span class="arrow">↓</span></span>
+            </nav>
             <nav class="projects-menu">
                 <ul>
-                    <li class="no-hover"><a>projects</a></li>
+                    <li class="no-hover projects-title-desktop"><a>projects</a></li>
                     <li><a href="1PWP.html" data-category="Branding, Editorial">Pavilion Without Walls</a></li>
-                    <li><a href="2Lbxd.html" data-category="Branding, Interactive">Letterboxd</a></li>
                     <li><a href="3Marcel.html" data-category="Branding, Editorial, Interactive">Hotel Marcel</a></li>
+                    <li><a href="2Lbxd.html" data-category="Branding, Interactive">Letterboxd</a></li>
                     <li><a href="4Pink.html" data-category="Print, Editorial">Pink Awakening</a></li>
                     <li><a href="5Performa.html" data-category="Branding, Interactive">Performa Biennial</a></li>
+                    <li><a href="" data-category="Packaging">Rice Robbers</a></li>
                 </ul>
             </nav>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Tae Hyun Kim.  All rights reserved.
+            </div>
         </aside>
 
     <main class="content">
